@@ -209,8 +209,26 @@ function checkMinMetascores(movies,metascore) {
       { "James and the Giant Peach": "91%" },
     ];
  */
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+  if(!movies.length){
+    throw "No movies were found!"
+  }
+  
+  //array.map(function(currentValue, index, arr), thisValue)
+  //array.find(function(currentValue, index, arr),thisValue)
 
+  return movies.map(rottenTomatoes) 
+
+    const rottenTomatoes=(movie) => {
+      let obj = {}
+      movie.find(movie.ratings.toLowerCase() === "rotten tomatoes")
+      obj[title] = movie.title;
+      obj["value"] = movie.rating[1].value;
+      console.log(obj)
+      return obj
+    }
+
+}
 // Do not change anything below this line.
 module.exports = {
   getAllMovieTitles,
