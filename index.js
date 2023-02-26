@@ -89,7 +89,12 @@ function findById(movies, id) {
     throw "No movies were found!"
   }
   //array.find(function(currentValue, index, arr),thisValue)
-  resultMovie === movies.find()
+  let resultMovie = movies.find(movie => movie.imdbID === id)
+
+  if (resultMovie === undefined){
+    return null
+  }
+  return resultMovie
 }
 
 /**
