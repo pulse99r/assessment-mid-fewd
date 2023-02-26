@@ -214,20 +214,14 @@ function getRottenTomatoesScoreByMovie(movies) {
     throw "No movies were found!"
   }
   
-  //array.map(function(currentValue, index, arr), thisValue)
-  //array.find(function(currentValue, index, arr),thisValue)
-
-  return movies.map(rottenTomatoes) 
-
-    const rottenTomatoes=(movie) => {
-      let obj = {}
-      movie.find(movie.ratings.toLowerCase() === "rotten tomatoes")
+  let rottenTomatoes = movies.find(movie => movie.ratings === "Rotten Tomatoes")
+ 
+  return rottenTomatoes.map(movie => {
+    let obj = {}
       obj[title] = movie.title;
       obj["value"] = movie.rating[1].value;
       console.log(obj)
-      return obj
-    }
-
+  }) 
 }
 // Do not change anything below this line.
 module.exports = {
